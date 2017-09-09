@@ -1,0 +1,4 @@
+http://neuralnetworksanddeeplearning.com/index.html
+
+# best resource to learn machine learning and neural network
+http://cs231n.github.io/
