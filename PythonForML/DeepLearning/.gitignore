@@ -1,2 +1,9 @@
+tflearncnn.model.data-00000-of-00001
+tflearncnn.model.meta
+tflearncnn.model.index
 sentiment_set.pickle
+processed-test-set.csv
+train_set_shuffled.csv
+train_set.csv
+mnist/
 trainingandtestdata/

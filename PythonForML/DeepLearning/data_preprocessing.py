@@ -29,7 +29,7 @@ def init_process(fin, fout):
                 initial_polarity = line.split(',')[0]
                 if initial_polarity == '0':
                     initial_polarity = [1, 0]
-                elif initial_polarity = '4':
+                elif initial_polarity == '4':
                     initial_polarity = [0, 1]
 
                 # last col is the tweet
@@ -60,7 +60,7 @@ def create_lexicon(fin):
                     # lemmatize all the tokenized words and store them in a list
                     words = [lemmatizer.lemmatize(i) for i in words]
                     lexicon = list(set(lexicon+words))
-                    print(counter, len(lexicon))
+                    #print(counter, len(lexicon))
         except Exception as e:
             print(str(e))
 
@@ -74,7 +74,6 @@ def convert_to_vec(fin, fout, lexicon_pickle):
     with open(lexicon_pickle, 'rb') as f:
         lexicon = pickle.load(f)
 
-    
     outfile = open(fout, 'a')
     with open(fin, buffering=20000, encoding='latin-1') as f:
         counter = 0
@@ -88,7 +87,7 @@ def convert_to_vec(fin, fout, lexicon_pickle):
             # create feature list with 0 values for all the lexicon
             # feature will have the count of the sample words in the lexicon
             features = np.zeros(len(lexicon))
-            
+           
             for word in current_words:
                 if word.lower() in lexicon:
                     # get the index in lexicon list to which 
@@ -96,8 +95,10 @@ def convert_to_vec(fin, fout, lexicon_pickle):
                     index_value = lexicon.index(word.lower())
                     features[index_value] += 1
 
+            print('features',features)
+            print(counter)
             features = list(features)
-            outline = str(features)+'::'+str(labels)+'\n'
+            outline = str(features)+'::'+str(label)+'\n'
             outfile.write(outline)
         print(counter)
 
@@ -132,9 +133,9 @@ def create_test_data_pickle(fin):
     feature_sets = np.array(feature_sets)
     labels = np.array(labels)
 
-init_process('training.1600000.processed.noemoticon.csv','train_set.csv')
-init_process('testdata.manual.2009.06.14.csv','test_set.csv')
-create_lexicon('train_set.csv')
+#init_process('trainingandtestdata/training.1600000.processed.noemoticon.csv','train_set.csv')
+#init_process('trainingandtestdata/testdata.manual.2009.06.14.csv','test_set.csv')
+#create_lexicon('train_set.csv')
 convert_to_vec('test_set.csv', 'processed-test-set.csv', 'lexicon.pickle')
-shuffle_data('train_set.csv')
-create_test_data_pickle('processed-test-set.csv')
+#shuffle_data('train_set.csv')
+#create_test_data_pickle('processed-test-set.csv')

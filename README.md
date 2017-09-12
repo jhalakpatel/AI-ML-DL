@@ -17,6 +17,7 @@ This repo consists of various resources ranging from video lectures, books, blog
 3. [CNN Video Lectures](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv)
 4. [Introduction to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
 5. [Introduction to Artificial Intelligence](https://www.udacity.com/course/intro-to-artificial-intelligence--cs271)
+6. [NLP With Deep Learning](http://web.stanford.edu/class/cs224n/)
 
 ## Python Tutorials (Relevant to Machine Learning)
 1. [NumPy Basics](http://cs231n.github.io/python-numpy-tutorial/)
