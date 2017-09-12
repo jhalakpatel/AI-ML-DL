@@ -1,3 +1,5 @@
+import nltk
+#nltk.download()
 from nltk.tokenize import sent_tokenize, word_tokenize
 example_text = "hello Mr. xyz, how are you doing today? the weather is greate today and python is awesome. the sky is blue and you should not be coding"
 
