@@ -1,0 +1,4 @@
+naivebayes.pickle
+*.pickle
+*.bin
+*.zip
